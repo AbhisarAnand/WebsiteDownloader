@@ -22,10 +22,8 @@ def index():
                 shutil.rmtree(download_folder)
             os.makedirs(download_folder)
 
-            # Run wget to download the website
             subprocess.run(['wget', '-P', download_folder, '-r', '-np', '-k', '-E', url])
 
-            # Zip the downloaded content
             zip_path = os.path.join(DOWNLOAD_FOLDER, ZIP_FILE_NAME)
             with zipfile.ZipFile(zip_path, 'w') as zipf:
                 for root, dirs, files in os.walk(download_folder):
@@ -34,7 +32,6 @@ def index():
                                    os.path.relpath(os.path.join(root, file),
                                                    os.path.join(download_folder, '..')))
 
-            # Clean up the downloaded folder
             shutil.rmtree(download_folder)
 
             return redirect(url_for('download_file', file_name=ZIP_FILE_NAME))
@@ -56,4 +53,4 @@ def download_file(file_name):
     return send_file(file_path, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
