@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Website Downloader</title>
+    <meta name="description" content="Download a website">
+    <meta name="author" content="Abhisar Anand">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add a laptop icon for the website's tab icon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
@@ -16,6 +21,8 @@
             <button type="submit" class="submit-button">Download</button>
         </form>
     </div>
+    <!--Add a p tag in the bottom right saying "Created by Abhisar Anand" and make it small-->
+    <p class="footer">Created by <a href="https://github.com/AbhisarAnand" target="_blank">Abhisar Anand</a></p>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

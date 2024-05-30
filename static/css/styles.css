@@ -76,3 +76,10 @@ input[type="text"]:focus {
         opacity: 1;
     }
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
